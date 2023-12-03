@@ -334,9 +334,11 @@ def nnUNet_predict_image(file_in, file_out, task_id, model="3d_fullres", folds=N
                     # pool.join()
             if not quiet: print(f"  Saved in {time.time() - st:.2f}s")
 
-            # Postprocessing
-            if task_name == "lung_vessels":
-                remove_outside_of_mask(file_out / "lung_vessels.nii.gz", file_out / "lung.nii.gz")
+            ## This step prevents running vessel segmentation if the lungs weren't run through TS
+            ## we remove it to make it work with our pipeline. -Nate
+            # # Postprocessing
+            # if task_name == "lung_vessels":
+            #     remove_outside_of_mask(file_out / "lung_vessels.nii.gz", file_out / "lung.nii.gz")
 
             if task_name == "body":
                 if not quiet: print("Creating body.nii.gz")
