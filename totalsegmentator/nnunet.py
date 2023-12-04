@@ -281,7 +281,7 @@ def nnUNet_predict_image(file_in, file_out, task_id, model="3d_fullres", folds=N
         if save_binary:
             img_data = (img_data > 0).astype(np.uint8)
 
-        if file_out is not None and str(file_out) is not "None":
+        if file_out is not None and str(file_out) != "None":
             if not quiet: print("Saving segmentations...")
             # Copy header to make output header exactly the same as input. But change dtype otherwise it will be 
             # float or int and therefore the masks will need a lot more space.
