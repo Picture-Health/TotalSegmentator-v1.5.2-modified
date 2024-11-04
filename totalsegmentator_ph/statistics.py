@@ -10,7 +10,7 @@ from tqdm import tqdm
 from p_tqdm import p_map
 import numpy.ma as ma
 
-from totalsegmentator.map_to_binary import class_map
+from totalsegmentator_ph.map_to_binary import class_map
 
 
 def get_radiomics_features(seg_file, img_file="ct.nii.gz"):

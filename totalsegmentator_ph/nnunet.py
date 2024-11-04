@@ -15,22 +15,22 @@ from multiprocessing import Pool
 import tempfile
 import torch
 
-from totalsegmentator.libs import nostdout
+from totalsegmentator_ph.libs import nostdout
 
 with nostdout():
     from nnunet.inference.predict import predict_from_folder
     from nnunet.paths import default_plans_identifier, network_training_output_dir, default_trainer
 
-from totalsegmentator.map_to_binary import class_map, class_map_5_parts, map_taskid_to_partname
-from totalsegmentator.alignment import as_closest_canonical_nifti, undo_canonical_nifti
-from totalsegmentator.alignment import as_closest_canonical, undo_canonical
-from totalsegmentator.resampling import change_spacing
-from totalsegmentator.preview import generate_preview
-from totalsegmentator.libs import combine_masks, compress_nifti, check_if_shape_and_affine_identical
-from totalsegmentator.cropping import crop_to_mask_nifti, undo_crop_nifti
-from totalsegmentator.cropping import crop_to_mask, undo_crop
-from totalsegmentator.postprocessing import remove_outside_of_mask, extract_skin
-from totalsegmentator.nifti_ext_header import save_multilabel_nifti
+from totalsegmentator_ph.map_to_binary import class_map, class_map_5_parts, map_taskid_to_partname
+from totalsegmentator_ph.alignment import as_closest_canonical_nifti, undo_canonical_nifti
+from totalsegmentator_ph.alignment import as_closest_canonical, undo_canonical
+from totalsegmentator_ph.resampling import change_spacing
+from totalsegmentator_ph.preview import generate_preview
+from totalsegmentator_ph.libs import combine_masks, compress_nifti, check_if_shape_and_affine_identical
+from totalsegmentator_ph.cropping import crop_to_mask_nifti, undo_crop_nifti
+from totalsegmentator_ph.cropping import crop_to_mask, undo_crop
+from totalsegmentator_ph.postprocessing import remove_outside_of_mask, extract_skin
+from totalsegmentator_ph.nifti_ext_header import save_multilabel_nifti
 
 
 def _get_full_task_name(task_id: int, src: str="raw"):

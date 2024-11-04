@@ -11,8 +11,8 @@ import requests
 import numpy as np
 import nibabel as nib
 
-from totalsegmentator.map_to_binary import class_map
-from totalsegmentator.map_to_binary import class_map_5_parts
+from totalsegmentator_ph.map_to_binary import class_map
+from totalsegmentator_ph.map_to_binary import class_map_5_parts
 
 """
 Helpers to suppress stdout prints from nnunet

@@ -10,8 +10,8 @@ import pandas as pd
 from tqdm import tqdm
 from fury import window, actor, ui, io, utils
 
-from totalsegmentator.vtk_utils import contour_from_roi_smooth, plot_mask
-from totalsegmentator.map_to_binary import class_map
+from totalsegmentator_ph.vtk_utils import contour_from_roi_smooth, plot_mask
+from totalsegmentator_ph.map_to_binary import class_map
 
 
 np.random.seed(1234)
